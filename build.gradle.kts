@@ -13,7 +13,7 @@ import org.springframework.boot.gradle.tasks.bundling.BootJar
      }
 
      dependencies {
-         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.0.RELEASE")
+         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.3.RELEASE")
      }
  }
 
@@ -23,10 +23,10 @@ repositories {
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM
-    id("org.jetbrains.kotlin.jvm").version("1.3.10")
-    id("org.jetbrains.kotlin.plugin.spring").version("1.3.10")
+    kotlin("jvm") version("1.3.21")
+    id("org.jetbrains.kotlin.plugin.spring").version("1.3.21")
 
-    id("org.springframework.boot").version("2.1.0.RELEASE")
+    id("org.springframework.boot").version("2.1.3.RELEASE")
     id("io.spring.dependency-management").version("1.0.6.RELEASE")
 }
 
@@ -38,7 +38,7 @@ repositories {
 
 dependencies {
     // Use the Kotlin JDK 8 standard library
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(kotlin("stdlib-jdk8"))
 
     implementation("org.springframework.boot:spring-boot-starter-web")
 
