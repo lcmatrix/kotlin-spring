@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.3.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
     }
 }
 
@@ -13,11 +13,12 @@ repositories {
 }
 
 plugins {
+    java
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM
-    kotlin("jvm") version("1.3.21")
-    id("org.jetbrains.kotlin.plugin.spring").version("1.3.21")
+    kotlin("jvm") version("1.3.31")
+    id("org.jetbrains.kotlin.plugin.spring").version("1.3.31")
 
-    id("org.springframework.boot").version("2.1.3.RELEASE")
+    id("org.springframework.boot").version("2.1.4.RELEASE")
     id("io.spring.dependency-management").version("1.0.6.RELEASE")
 }
 
@@ -33,6 +34,9 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-web")
 
+    
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
     // Use the Kotlin test library
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
@@ -46,4 +50,8 @@ tasks.bootJar {
 
 tasks.compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.wrapper {
+    gradleVersion = "5.4.1"
 }
