@@ -15,8 +15,8 @@ repositories {
 plugins {
     java
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM
-    kotlin("jvm") version("1.3.31")
-    id("org.jetbrains.kotlin.plugin.spring").version("1.3.31")
+    kotlin("jvm") version("1.3.50")
+    id("org.jetbrains.kotlin.plugin.spring").version("1.3.50")
 
     id("org.springframework.boot").version("2.1.4.RELEASE")
     id("io.spring.dependency-management").version("1.0.6.RELEASE")
