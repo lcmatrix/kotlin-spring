@@ -27,4 +27,8 @@ class SampleController {
     }
 }
 
-data class Greeting(val msg: String)
+data class Greeting(val msg: String) {
+    fun sayHello() : String {
+        return "Hello!"
+    }
+}

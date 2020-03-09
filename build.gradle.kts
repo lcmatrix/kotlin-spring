@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.5.RELEASE")
     }
 }
 
@@ -15,11 +15,11 @@ repositories {
 plugins {
     java
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM
-    kotlin("jvm") version("1.3.61")
-    id("org.jetbrains.kotlin.plugin.spring").version("1.3.61")
+    kotlin("jvm") version("1.3.70")
+    id("org.jetbrains.kotlin.plugin.spring").version("1.3.70")
 
-    id("org.springframework.boot").version("2.1.8.RELEASE")
-    id("io.spring.dependency-management").version("1.0.6.RELEASE")
+    id("org.springframework.boot").version("2.2.5.RELEASE")
+    id("io.spring.dependency-management").version("1.0.9.RELEASE")
 }
 
 repositories {
@@ -51,6 +51,10 @@ version = "0.1.0"
 springBoot {
     mainClassName = "de.kotlin.spring.AppKt"
     buildInfo()
+}
+
+tasks.getByName<BootRun>("bootRun") {
+    sourceResources(sourceSets["main"])
 }
 
 tasks.compileKotlin {
