@@ -53,7 +53,7 @@ springBoot {
     buildInfo()
 }
 
-tasks.getByName<BootRun>("bootRun") {
+tasks.bootRun {
     sourceResources(sourceSets["main"])
 }
 
