@@ -15,9 +15,9 @@ repositories {
 plugins {
     java
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM
-    kotlin("jvm") version("1.3.70")
-    id("org.jetbrains.kotlin.plugin.spring").version("1.3.70")
-
+    kotlin("jvm") version("1.3.71")
+    id("org.jetbrains.kotlin.plugin.spring").version("1.3.71")
+    kotlin("plugin.jpa") version "1.3.71"
     id("org.springframework.boot").version("2.2.5.RELEASE")
     id("io.spring.dependency-management").version("1.0.9.RELEASE")
 }
@@ -33,7 +33,10 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+    // implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.mongodb:mongo-java-driver:3.12+")
 
     
     testImplementation("org.springframework.boot:spring-boot-starter-test")
