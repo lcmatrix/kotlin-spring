@@ -1,5 +1,6 @@
 package de.kotlin.spring
 
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -30,9 +31,14 @@ class SampleController(private val personRepository: PersonRepository) {
     }
 
     @GetMapping("/person/{lastname}")
-    fun getPerson(@PathVariable lastname: String): Person? {
+    fun getPerson(@PathVariable lastname: String): ResponseEntity<Person> {
         LOG.debug("searching for {}", lastname)
-        return personRepository.findByLastname(lastname)
+        val person: Person? = personRepository.findByLastname(lastname)
+        LOG.debug("found {}", person)
+        if (person != null) {
+            return ResponseEntity.ok(person)
+        }
+        return ResponseEntity.notFound().build()
     }
 
     @PostMapping("/person")
