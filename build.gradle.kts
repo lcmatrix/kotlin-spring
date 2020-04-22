@@ -15,9 +15,9 @@ repositories {
 plugins {
     java
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM
-    kotlin("jvm") version("1.3.71")
-    id("org.jetbrains.kotlin.plugin.spring").version("1.3.71")
-    kotlin("plugin.jpa") version "1.3.71"
+    kotlin("jvm") version("1.3.72")
+    id("org.jetbrains.kotlin.plugin.spring").version("1.3.72")
+    id("org.jetbrains.kotlin.plugin.jpa") version "1.3.72"
     id("org.springframework.boot").version("2.2.5.RELEASE")
     id("io.spring.dependency-management").version("1.0.9.RELEASE")
 }
@@ -65,5 +65,5 @@ tasks.compileKotlin {
 }
 
 tasks.wrapper {
-    gradleVersion = "6.0"
+    gradleVersion = "6.3"
 }
