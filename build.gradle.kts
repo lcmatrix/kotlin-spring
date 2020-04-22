@@ -38,7 +38,6 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.mongodb:mongo-java-driver:3.12+")
 
-    
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // Use the Kotlin test library
